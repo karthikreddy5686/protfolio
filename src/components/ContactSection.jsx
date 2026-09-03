@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Send, CheckCircle2, Mail, User, Phone, Zap, ShieldCheck, Clock } from 'lucide-react'
+import { Send, CheckCircle2, Mail, User, Phone, Zap, ShieldCheck, Clock, Globe } from 'lucide-react'
 import { soundFx } from '../utils/audio'
 
 export const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfrfqlB572H6cRESYRcTFyaIaz2dc9yPMSgj_6M5557-ytNbA/formResponse'
@@ -9,23 +9,12 @@ export default function ContactSection() {
   const [email, setEmail] = useState('')
   const [mobileNumber, setMobileNumber] = useState('')
   const [requiredService, setRequiredService] = useState('WEB DEVELOPMENT')
-  const [commMethods, setCommMethods] = useState(['Email'])
+  const [referenceLink, setReferenceLink] = useState('')
   const [consultationDate, setConsultationDate] = useState('')
   const [projectOverview, setProjectOverview] = useState('')
 
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
-
-  const handleCommToggle = (method) => {
-    soundFx.playClick()
-    if (commMethods.includes(method)) {
-      if (commMethods.length > 1) {
-        setCommMethods(commMethods.filter((m) => m !== method))
-      }
-    } else {
-      setCommMethods([...commMethods, method])
-    }
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,9 +30,9 @@ export default function ContactSection() {
     formData.append('entry.1389048219', mobileNumber)
     formData.append('entry.420118808', requiredService)
     
-    commMethods.forEach((method) => {
-      formData.append('entry.2031857934', method)
-    })
+    if (referenceLink) {
+      formData.append('entry.2031857934', referenceLink)
+    }
 
     if (consultationDate) {
       formData.append('entry.1499330880', consultationDate)
@@ -116,6 +105,7 @@ export default function ContactSection() {
                       setFullName('')
                       setEmail('')
                       setMobileNumber('')
+                      setReferenceLink('')
                       setProjectOverview('')
                       setConsultationDate('')
                     }}
@@ -222,37 +212,21 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  {/* Row 4: Preferred Communication Methods & Date */}
+                  {/* Row 4: Previous Website / Reference Link & Consultation Date */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-700 mb-1">
-                        Communication Preference
+                        Previous / Reference Website Link
                       </label>
-                      <div className="flex items-center gap-2">
-                        {['Email', 'Phone Call'].map((method) => {
-                          const isChecked = commMethods.includes(method)
-                          return (
-                            <button
-                              key={method}
-                              type="button"
-                              onClick={() => handleCommToggle(method)}
-                              className={`px-2.5 py-1.5 rounded-[4px] border text-[10px] font-semibold flex items-center gap-1.5 transition-all interactive ${
-                                isChecked
-                                  ? 'bg-neutral-900 text-white border-neutral-900'
-                                  : 'bg-neutral-50/70 border-neutral-200 text-neutral-700 hover:bg-neutral-100'
-                              }`}
-                            >
-                              <div
-                                className={`w-2.5 h-2.5 rounded-[2px] border flex items-center justify-center ${
-                                  isChecked ? 'border-white bg-white text-neutral-950' : 'border-neutral-400'
-                                }`}
-                              >
-                                {isChecked && <CheckCircle2 className="w-2 h-2 text-neutral-950" />}
-                              </div>
-                              <span>{method}</span>
-                            </button>
-                          )
-                        })}
+                      <div className="relative">
+                        <input
+                          type="text"
+                          value={referenceLink}
+                          onChange={(e) => setReferenceLink(e.target.value)}
+                          placeholder="e.g. https://yourcompany.com or reference link"
+                          className="w-full pl-8 pr-3 py-2 rounded-[4px] bg-neutral-50/70 border border-neutral-300 text-neutral-950 placeholder:text-neutral-400 focus:bg-white focus:outline-none focus:border-neutral-950 transition-all text-xs font-medium shadow-2xs"
+                        />
+                        <Globe className="w-3 h-3 text-neutral-400 absolute left-2.5 top-2.5" />
                       </div>
                     </div>
 
