@@ -25,35 +25,35 @@ const techRow2 = [
 
 export default function ClientMarquee() {
   return (
-    <section className="pt-2 pb-12 md:pb-14 bg-white relative overflow-hidden border-b border-neutral-200/80">
+    <section className="pt-2 pb-6 md:pb-8 bg-white relative overflow-hidden border-b border-neutral-200/80">
       
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-6 text-center flex flex-col items-center">
-        <h2 className="font-display font-bold text-xl sm:text-2xl text-neutral-950 tracking-tight">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 mb-4 text-center flex flex-col items-center">
+        <h2 className="font-display font-bold text-lg sm:text-xl text-neutral-950 tracking-tight">
           Modern High-Performance Engineering Stack
         </h2>
-        <p className="text-xs sm:text-sm text-neutral-500 max-w-xl mt-1 font-normal">
+        <p className="text-xs text-neutral-500 max-w-xl mt-0.5 font-normal">
           Battle-tested frameworks, cloud infrastructure, and modern toolchains powering our client products.
         </p>
       </div>
 
       {/* Row 1 - Left to Right */}
-      <div className="flex overflow-hidden relative w-full select-none py-1.5 mask-linear">
-        <div className="flex shrink-0 items-center gap-3 animate-marquee hover:[animation-play-state:paused]">
+      <div className="flex overflow-hidden relative w-full select-none py-1 mask-linear">
+        <div className="flex shrink-0 items-center gap-2.5 animate-marquee hover:[animation-play-state:paused]">
           {[...techRow1, ...techRow1, ...techRow1].map((tech, idx) => (
             <div
               key={`r1-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-sm transition-all duration-300 interactive cursor-default"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
-              <span className="text-sm">{tech.icon}</span>
+              <span className="text-xs">{tech.icon}</span>
               <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">
                 {tech.name}
               </span>
-              <span className="text-[10px] text-neutral-400 font-mono">
+              <span className="text-[9px] text-neutral-400 font-mono">
                 •
               </span>
-              <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+              <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">
                 {tech.category}
               </span>
             </div>
@@ -62,22 +62,22 @@ export default function ClientMarquee() {
       </div>
 
       {/* Row 2 - Right to Left */}
-      <div className="flex overflow-hidden relative w-full select-none py-1.5 mt-1 mask-linear">
-        <div className="flex shrink-0 items-center gap-3 animate-marquee-reverse hover:[animation-play-state:paused]">
+      <div className="flex overflow-hidden relative w-full select-none py-1 mask-linear">
+        <div className="flex shrink-0 items-center gap-2.5 animate-marquee-reverse hover:[animation-play-state:paused]">
           {[...techRow2, ...techRow2, ...techRow2].map((tech, idx) => (
             <div
               key={`r2-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-sm transition-all duration-300 interactive cursor-default"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
-              <span className="text-sm">{tech.icon}</span>
+              <span className="text-xs">{tech.icon}</span>
               <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">
                 {tech.name}
               </span>
-              <span className="text-[10px] text-neutral-400 font-mono">
+              <span className="text-[9px] text-neutral-400 font-mono">
                 •
               </span>
-              <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+              <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">
                 {tech.category}
               </span>
             </div>
