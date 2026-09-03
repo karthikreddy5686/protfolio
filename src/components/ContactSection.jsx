@@ -181,16 +181,17 @@ export default function ContactSection() {
                     </div>
                   </div>
 
-                  {/* Row 3: Required Service */}
+                  {/* Row 3: Required Service (4 Services: Web, App, UI/UX, Marketing) */}
                   <div>
                     <label className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-700 mb-1">
                       Required Service <span className="text-[#ea580c]">*</span>
                     </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {[
-                        { id: 'WEB DEVELOPMENT', label: 'Web Development' },
-                        { id: 'APP DEVELOPMENT', label: 'App Development' },
-                        { id: 'DIGITAL MARKETING SERVICES', label: 'Digital Marketing' },
+                        { id: 'WEB DEVELOPMENT', label: 'Web Dev' },
+                        { id: 'APP DEVELOPMENT', label: 'App Dev' },
+                        { id: 'UI/UX DESIGN', label: 'UI/UX Design' },
+                        { id: 'DIGITAL MARKETING SERVICES', label: 'Marketing' },
                       ].map((service) => {
                         const isSelected = requiredService === service.id
                         return (
@@ -318,7 +319,7 @@ export default function ContactSection() {
               </h2>
 
               <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
-                Whether you're launching a high-converting web storefront, cross-platform mobile application, or technical growth campaign, reactj provides the engineering caliber to take you from concept to market leader.
+                Whether you're launching a high-converting web storefront, cross-platform mobile application, UI/UX design system, or technical growth campaign, reactj provides the engineering caliber to take you from concept to market leader.
               </p>
             </div>
 
@@ -345,7 +346,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xs sm:text-sm text-neutral-900">
-                    React & Next.js 15 Specialization
+                    React, Next.js 15 & UI/UX Systems
                   </h4>
                   <p className="text-[11px] text-neutral-500 mt-0.5 leading-relaxed">
                     Production-grade modern toolchains built for 60 FPS performance and sub-second loading speeds.
