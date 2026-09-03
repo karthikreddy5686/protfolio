@@ -322,12 +322,12 @@ export default function ContactSection() {
               </p>
             </div>
 
-            {/* Value Guarantees */}
-            <div className="space-y-3 pt-2 border-t border-neutral-200">
+            {/* Value Guarantees with Monochrome Black Icons */}
+            <div className="space-y-3.5 pt-2 border-t border-neutral-200">
               
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-orange-50 text-[#ea580c] border border-orange-200/80 flex items-center justify-center shrink-0 mt-0.5">
-                  <Clock className="w-3.5 h-3.5" />
+                <div className="w-7 h-7 rounded-lg bg-neutral-950 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                  <Clock className="w-3.5 h-3.5 text-white" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xs sm:text-sm text-neutral-900">
@@ -340,8 +340,8 @@ export default function ContactSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 border border-purple-200/80 flex items-center justify-center shrink-0 mt-0.5">
-                  <Zap className="w-3.5 h-3.5" />
+                <div className="w-7 h-7 rounded-lg bg-neutral-950 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                  <Zap className="w-3.5 h-3.5 text-white" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xs sm:text-sm text-neutral-900">
@@ -354,8 +354,8 @@ export default function ContactSection() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 border border-emerald-200/80 flex items-center justify-center shrink-0 mt-0.5">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+                <div className="w-7 h-7 rounded-lg bg-neutral-950 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                  <ShieldCheck className="w-3.5 h-3.5 text-white" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xs sm:text-sm text-neutral-900">

@@ -1,4 +1,5 @@
 import React from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import { soundFx } from '../utils/audio'
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
         </h1>
 
         {/* 3 Logo-Orange Service Pill Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 select-none">
+        <div className="flex flex-wrap items-center justify-center gap-2 select-none mb-6">
           <a
             href="#about"
             onClick={() => soundFx.playClick()}
@@ -42,6 +43,17 @@ export default function Hero() {
             Digital Marketing
           </a>
         </div>
+
+        {/* Get Quote CTA Button Above the Scroller */}
+        <a
+          href="#contact"
+          onClick={() => soundFx.playClick()}
+          onMouseEnter={() => soundFx.playHover()}
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-neutral-950 hover:bg-[#ea580c] text-white text-xs font-bold tracking-wide shadow-md hover:shadow-lg transition-all duration-200 interactive"
+        >
+          <span>Get Quote</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
 
       </div>
     </section>
