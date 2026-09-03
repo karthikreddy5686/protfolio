@@ -40,6 +40,7 @@ export const serviceShowcase = [
     id: 'marketing',
     title: 'Digital Marketing',
     category: 'SEO & Performance Growth',
+    headline: 'Execute data-driven technical SEO & ads.',
     description: 'Execute data-driven technical SEO, Google Ads (PPC), and Meta performance funnels that turn search demand into predictable qualified revenue pipeline.',
     cta: 'Scale Growth with reactj',
     image: '/images/real-analytics-desk.jpg',
@@ -53,14 +54,14 @@ export const clientReviews = [
     name: 'Rahul Varma',
     role: 'Founder, LS & Collections',
     rating: 5,
-    comment: 'reactj delivered our luxury silk storefront with sub-second page loads. Our online conversion rate increased by 42% within the first month of launch.',
+    comment: 'reactj delivered our luxury silk storefront with sub-second page loads. Our online conversion rate increased by 42% in month one.',
     tag: 'E-Commerce Storefront',
   },
   {
     name: 'Vikramaditya Rao',
     role: 'VP of Engineering, Geonixa',
     rating: 5,
-    comment: 'The team built both our Enterprise HRMS and AI Talent proctoring system with Next.js 15. The code quality, velocity, and architecture exceeded expectations.',
+    comment: 'The team built both our Enterprise HRMS and AI Talent proctoring system with Next.js 15. The velocity and clean code exceeded expectations.',
     tag: 'Enterprise PWA',
   },
   {
@@ -101,45 +102,52 @@ export default function AboutSection() {
     <section id="about" className="py-10 md:py-14 px-4 sm:px-6 md:px-12 bg-white relative border-b border-neutral-200/80">
       <div className="max-w-6xl mx-auto">
         
-        {/* Top Service Tabs Switcher - Reduced Gap */}
+        {/* Top 4 Service Tabs with Instant Hover & Click Transition */}
         <div className="flex items-center justify-center gap-2 sm:gap-2.5 mb-8 flex-wrap">
           {serviceShowcase.map((item, idx) => {
             const isActive = activeIdx === idx
             return (
               <button
                 key={item.id}
+                onMouseEnter={() => {
+                  soundFx.playHover()
+                  setActiveIdx(idx)
+                }}
                 onClick={() => {
                   soundFx.playClick()
                   setActiveIdx(idx)
                 }}
-                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 interactive ${
+                className={`relative px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 interactive overflow-hidden ${
                   isActive
-                    ? 'bg-neutral-950 text-white shadow-md'
-                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200/80 hover:text-neutral-900'
+                    ? 'bg-neutral-950 text-white shadow-md scale-105'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200/80 hover:text-neutral-900 hover:scale-102'
                 }`}
               >
                 <span>{item.title}</span>
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c] animate-pulse" />
+                )}
               </button>
             )
           })}
         </div>
 
-        {/* Hostinger-Style Split Showcase Layout */}
+        {/* Hostinger-Style Split Showcase Layout with 4 Slides 3D Hover Effect */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           
-          {/* Left Column: 3D Stacked Card Deck (lg:col-span-6) */}
-          <div className="lg:col-span-6 relative flex justify-center py-2">
+          {/* Left Column: Interactive 3D Stacked Card Deck (lg:col-span-6) */}
+          <div className="lg:col-span-6 relative flex flex-col items-center justify-center py-2">
             
-            <div className="relative w-full max-w-md">
+            <div className="group relative w-full max-w-md cursor-pointer select-none">
               
-              {/* Layer 3 (Deepest Back Stack Card) */}
-              <div className="absolute inset-0 -top-5 -left-3 right-3 h-64 sm:h-72 bg-neutral-300/60 rounded-3xl transform -rotate-3 transition-transform duration-500 pointer-events-none" />
+              {/* Layer 3 (Deepest Back Stack Card with Fan-Out Hover Effect) */}
+              <div className="absolute inset-0 -top-5 -left-3 right-3 h-64 sm:h-72 bg-neutral-300/70 rounded-3xl transform -rotate-3 group-hover:-rotate-6 group-hover:-translate-x-2.5 group-hover:-translate-y-2.5 transition-all duration-500 ease-out pointer-events-none shadow-sm" />
 
-              {/* Layer 2 (Middle Stack Card) */}
-              <div className="absolute inset-0 -top-2.5 -right-3 left-3 h-64 sm:h-72 bg-neutral-800/80 rounded-3xl transform rotate-2 transition-transform duration-500 pointer-events-none" />
+              {/* Layer 2 (Middle Stack Card with Fan-Out Hover Effect) */}
+              <div className="absolute inset-0 -top-2.5 -right-3 left-3 h-64 sm:h-72 bg-neutral-800/90 rounded-3xl transform rotate-2 group-hover:rotate-4 group-hover:translate-x-2.5 group-hover:-translate-y-1.5 transition-all duration-500 ease-out pointer-events-none shadow-md" />
 
-              {/* Layer 1 (Active Front Showcase Card / Browser Window) */}
-              <div className="relative bg-white rounded-3xl border border-neutral-200/90 shadow-2xl overflow-hidden transition-all duration-500">
+              {/* Layer 1 (Active Front Showcase Card / Browser Window with Subtle Lift) */}
+              <div className="relative bg-white rounded-3xl border border-neutral-200/90 shadow-xl group-hover:shadow-2xl group-hover:scale-[1.01] overflow-hidden transition-all duration-500 ease-out">
                 
                 {/* Browser Window Header Bar */}
                 <div className="px-4 py-2.5 bg-white border-b border-neutral-100 flex items-center justify-between">
@@ -154,7 +162,8 @@ export default function AboutSection() {
                   
                   {/* Pause / Play Auto-cycle Toggle */}
                   <button
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation()
                       soundFx.playClick()
                       setIsPlaying(!isPlaying)
                     }}
@@ -171,7 +180,7 @@ export default function AboutSection() {
                     key={current.id}
                     src={current.image}
                     alt={current.title}
-                    className="w-full h-full object-cover animate-fade-in"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out animate-fade-in"
                   />
                   {/* Subtle Gradient Vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -179,6 +188,29 @@ export default function AboutSection() {
 
               </div>
 
+            </div>
+
+            {/* 4 Slides Interactive Indicator Dots with Hover Effect */}
+            <div className="flex items-center gap-2 mt-5">
+              {serviceShowcase.map((_, idx) => (
+                <button
+                  key={idx}
+                  onMouseEnter={() => {
+                    soundFx.playHover()
+                    setActiveIdx(idx)
+                  }}
+                  onClick={() => {
+                    soundFx.playClick()
+                    setActiveIdx(idx)
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeIdx === idx
+                      ? 'w-8 bg-neutral-950'
+                      : 'w-2 bg-neutral-300 hover:bg-neutral-400'
+                  }`}
+                />
+              ))}
             </div>
 
           </div>
