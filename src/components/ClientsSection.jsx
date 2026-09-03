@@ -133,14 +133,14 @@ export default function ClientsSection() {
           </h2>
         </div>
 
-        {/* 1. Desktop & Tablet: Horizontal Scroller moving towards the Left */}
+        {/* 1. Desktop & Tablet: Horizontal Scroller moving towards the Left (rounded-[4px]) */}
         <div className="hidden md:block relative w-full overflow-hidden mask-fade-horizontal">
           <div className="flex gap-4 w-max animate-marquee hover:[animation-play-state:paused] py-2">
             {[...clientBrands, ...clientBrands].map((client, idx) => (
               <div
                 key={idx}
                 onMouseEnter={() => soundFx.playHover()}
-                className="group flex flex-col items-center justify-center py-3 px-5 rounded-xl border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/15 transition-all duration-200 cursor-default select-none shrink-0 min-w-[150px]"
+                className="group flex flex-col items-center justify-center py-3 px-5 rounded-[4px] border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/15 transition-all duration-200 cursor-default select-none shrink-0 min-w-[150px]"
               >
                 <div className="mb-1.5 transform group-hover:scale-110 transition-transform duration-200">
                   {client.icon}
@@ -158,8 +158,8 @@ export default function ClientsSection() {
           </div>
         </div>
 
-        {/* 2. Mobile (Phone): Vertical Scroller showing exactly 4 items height, scrolling upwards */}
-        <div className="md:hidden relative w-full max-w-xs mx-auto h-[230px] overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-2">
+        {/* 2. Mobile (Phone): Vertical Scroller showing exactly 4 items height (rounded-[4px]) */}
+        <div className="md:hidden relative w-full max-w-xs mx-auto h-[230px] overflow-hidden rounded-[4px] border border-white/5 bg-white/[0.01] p-2">
           {/* Gradient Masks for Smooth Vertical Fade */}
           <div className="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-neutral-950 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
@@ -169,7 +169,7 @@ export default function ClientsSection() {
             {[...clientBrands, ...clientBrands].map((client, idx) => (
               <div
                 key={idx}
-                className="group flex items-center justify-between py-2 px-3.5 rounded-lg border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] transition-all cursor-default select-none shrink-0 h-[48px]"
+                className="group flex items-center justify-between py-2 px-3.5 rounded-[4px] border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] transition-all cursor-default select-none shrink-0 h-[48px]"
               >
                 <div className="flex items-center gap-2.5">
                   <div className="shrink-0">{client.icon}</div>

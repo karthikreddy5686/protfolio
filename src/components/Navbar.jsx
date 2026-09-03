@@ -55,14 +55,14 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Center Navigation Links (Home, About Us, Contact) */}
-          <nav className="hidden lg:flex items-center gap-1 bg-neutral-100/70 p-1.5 rounded-full border border-neutral-200/60 relative">
+          {/* Center Navigation Links (Home, About Us, Contact) - rounded-[4px] */}
+          <nav className="hidden lg:flex items-center gap-1 bg-neutral-100/70 p-1.5 rounded-[4px] border border-neutral-200/60 relative">
             
             {/* 1. Home */}
             <a
               href="#home"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'home'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -75,7 +75,7 @@ export default function Navbar() {
             <a
               href="#about"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'about'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -88,7 +88,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'contact'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -98,12 +98,12 @@ export default function Navbar() {
             </a>
           </nav>
 
-          {/* Right Action Button - Get Quote */}
+          {/* Right Action Button - Get Quote (rounded-[4px]) */}
           <div className="flex items-center gap-3">
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className="px-6 py-2.5 rounded-full bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
+              className="px-6 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
             >
               <span>Get Quote</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -115,7 +115,7 @@ export default function Navbar() {
                 soundFx.playClick()
                 setMobileMenuOpen(!mobileMenuOpen)
               }}
-              className="lg:hidden w-9 h-9 rounded-full bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800"
+              className="lg:hidden w-9 h-9 rounded-[4px] bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -162,7 +162,7 @@ export default function Navbar() {
                 soundFx.playClick()
                 setMobileMenuOpen(false)
               }}
-              className="w-full py-3.5 rounded-2xl bg-neutral-950 text-white text-center font-bold text-sm hover:bg-[#ea580c] transition-colors shadow-lg"
+              className="w-full py-3.5 rounded-[4px] bg-neutral-950 text-white text-center font-bold text-sm hover:bg-[#ea580c] transition-colors shadow-lg"
             >
               Get Quote →
             </a>

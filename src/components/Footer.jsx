@@ -15,13 +15,13 @@ export default function Footer() {
           />
           <span className="text-neutral-300 hidden sm:inline">|</span>
           
-          {/* Clickable WhatsApp Link */}
+          {/* Clickable WhatsApp Link (rounded-[4px]) */}
           <a
             href="https://wa.me/919390514374?text=Hi%20reactj%2C%20I%20would%20like%20to%20discuss%20a%20project."
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundFx.playClick()}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 text-emerald-800 transition-all duration-200 group interactive"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[4px] bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 text-emerald-800 transition-all duration-200 group interactive"
             title="Chat on WhatsApp"
           >
             {/* Official WhatsApp SVG Icon */}

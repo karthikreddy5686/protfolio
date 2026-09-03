@@ -37,14 +37,14 @@ export default function ClientMarquee() {
         </p>
       </div>
 
-      {/* Row 1 - Left to Right */}
+      {/* Row 1 - Left to Right (rounded-[4px]) */}
       <div className="flex overflow-hidden relative w-full select-none py-1 mask-linear">
         <div className="flex shrink-0 items-center gap-2.5 animate-marquee hover:[animation-play-state:paused]">
           {[...techRow1, ...techRow1, ...techRow1].map((tech, idx) => (
             <div
               key={`r1-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
               <span className="text-xs">{tech.icon}</span>
               <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">
@@ -61,14 +61,14 @@ export default function ClientMarquee() {
         </div>
       </div>
 
-      {/* Row 2 - Right to Left */}
+      {/* Row 2 - Right to Left (rounded-[4px]) */}
       <div className="flex overflow-hidden relative w-full select-none py-1 mask-linear">
         <div className="flex shrink-0 items-center gap-2.5 animate-marquee-reverse hover:[animation-play-state:paused]">
           {[...techRow2, ...techRow2, ...techRow2].map((tech, idx) => (
             <div
               key={`r2-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
               <span className="text-xs">{tech.icon}</span>
               <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">

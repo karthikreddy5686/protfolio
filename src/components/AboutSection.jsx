@@ -41,7 +41,7 @@ export default function AboutSection() {
           </h2>
         </div>
 
-        {/* Compact Expanding Accordion Card Hover Interaction */}
+        {/* Compact Expanding Accordion Card Hover Interaction (rounded-[4px]) */}
         <div className="flex flex-col md:flex-row gap-2.5 sm:gap-3.5 h-[460px] md:h-[340px] w-full select-none">
           {services.map((service, idx) => {
             const isExpanded = activeCard === idx
@@ -57,23 +57,23 @@ export default function AboutSection() {
                   soundFx.playClick()
                   setActiveCard(idx)
                 }}
-                className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border border-neutral-200/80 shadow-xs ${
+                className={`relative rounded-[4px] overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border border-neutral-200/80 shadow-xs ${
                   isExpanded
                     ? 'md:flex-[3] flex-[3] shadow-xl ring-1 ring-neutral-950/10'
                     : 'md:flex-1 flex-1 opacity-90 hover:opacity-100 hover:shadow-md'
                 }`}
               >
-                {/* Background Realistic Photography */}
+                {/* Background Realistic Photography (rounded-[4px]) */}
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out rounded-[4px] ${
                     isExpanded ? 'scale-105' : 'scale-100 filter brightness-90'
                   }`}
                 />
 
                 {/* Dark Gradient Overlay for Clean Text Legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent rounded-[4px]" />
 
                 {/* Bottom Bar: ONLY the Clean Title */}
                 <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 text-left text-white flex flex-col justify-end">

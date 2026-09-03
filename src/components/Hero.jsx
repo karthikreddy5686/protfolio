@@ -16,13 +16,13 @@ export default function Hero() {
           We engineer high-performance web apps, mobile products, and digital growth systems.
         </h1>
 
-        {/* 4 Logo-Orange Service Pill Buttons */}
+        {/* 4 Logo-Orange Service Pill Buttons (rounded-[4px]) */}
         <div className="flex flex-wrap items-center justify-center gap-2 select-none mb-3.5">
           <a
             href="#about"
             onClick={() => soundFx.playClick()}
             onMouseEnter={() => soundFx.playHover()}
-            className="px-4 py-1.5 rounded-full bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
+            className="px-4 py-1.5 rounded-[4px] bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
           >
             Web Development
           </a>
@@ -30,7 +30,7 @@ export default function Hero() {
             href="#about"
             onClick={() => soundFx.playClick()}
             onMouseEnter={() => soundFx.playHover()}
-            className="px-4 py-1.5 rounded-full bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
+            className="px-4 py-1.5 rounded-[4px] bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
           >
             App Development
           </a>
@@ -38,7 +38,7 @@ export default function Hero() {
             href="#about"
             onClick={() => soundFx.playClick()}
             onMouseEnter={() => soundFx.playHover()}
-            className="px-4 py-1.5 rounded-full bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
+            className="px-4 py-1.5 rounded-[4px] bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
           >
             UI/UX Design
           </a>
@@ -46,18 +46,18 @@ export default function Hero() {
             href="#about"
             onClick={() => soundFx.playClick()}
             onMouseEnter={() => soundFx.playHover()}
-            className="px-4 py-1.5 rounded-full bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
+            className="px-4 py-1.5 rounded-[4px] bg-orange-50 text-[#ea580c] hover:bg-[#ea580c] hover:text-white border border-orange-200 text-xs font-semibold tracking-wide transition-all duration-200 shadow-2xs interactive"
           >
             Digital Marketing
           </a>
         </div>
 
-        {/* Get Quote CTA Button - Centered tightly between pills and headline */}
+        {/* Get Quote CTA Button (rounded-[4px]) */}
         <a
           href="#contact"
           onClick={() => soundFx.playClick()}
           onMouseEnter={() => soundFx.playHover()}
-          className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-neutral-950 hover:bg-[#ea580c] text-white text-xs font-bold tracking-wide shadow-md hover:shadow-lg transition-all duration-200 interactive"
+          className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white text-xs font-bold tracking-wide shadow-md hover:shadow-lg transition-all duration-200 interactive"
         >
           <span>Get Quote</span>
           <ArrowUpRight className="w-3.5 h-3.5" />

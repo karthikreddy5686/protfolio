@@ -61,13 +61,13 @@ export default function AchievementsSection() {
           </h2>
         </div>
 
-        {/* 1. Key Metrics / Achievements Row */}
+        {/* 1. Key Metrics / Achievements Row (rounded-[4px]) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 mb-6">
           {achievements.map((item, idx) => (
             <div
               key={idx}
               onMouseEnter={() => soundFx.playHover()}
-              className="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-left transition-all duration-200 hover:border-white/25 hover:bg-white/[0.06] interactive"
+              className="p-4 rounded-[4px] bg-white/[0.03] border border-white/10 text-left transition-all duration-200 hover:border-white/25 hover:bg-white/[0.06] interactive"
             >
               <div className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight">
                 {item.number}
@@ -82,7 +82,7 @@ export default function AchievementsSection() {
           ))}
         </div>
 
-        {/* 2. Industry Recognitions & Honors */}
+        {/* 2. Industry Recognitions & Honors (rounded-[4px]) */}
         <div>
           <h3 className="font-display font-bold text-xs text-neutral-300 mb-3 tracking-tight uppercase">
             Industry Recognitions & Honors
@@ -91,9 +91,9 @@ export default function AchievementsSection() {
             {awards.map((award, idx) => (
               <div
                 key={idx}
-                className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-start gap-3 text-left hover:border-white/20 transition-colors"
+                className="p-3.5 rounded-[4px] bg-white/[0.03] border border-white/10 flex items-start gap-3 text-left hover:border-white/20 transition-colors"
               >
-                <div className="w-7 h-7 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-[4px] bg-white/10 border border-white/10 flex items-center justify-center shrink-0 mt-0.5">
                   {award.icon}
                 </div>
                 <div>
@@ -101,7 +101,7 @@ export default function AchievementsSection() {
                     <span className="font-bold text-xs text-white leading-tight">
                       {award.title}
                     </span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-white/10 text-neutral-300 font-semibold">
+                    <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-[4px] bg-white/10 text-neutral-300 font-semibold">
                       {award.year}
                     </span>
                   </div>
