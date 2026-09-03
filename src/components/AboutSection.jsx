@@ -183,21 +183,6 @@ export default function AboutSection() {
 
               </div>
 
-              {/* Floating Bottom Dynamic Prompt Pill */}
-              <div className="relative -mt-6 mx-3 sm:mx-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-neutral-200/90 shadow-[0_12px_30px_rgba(0,0,0,0.12)] flex items-center justify-between gap-3 animate-fade-in">
-                <p className="text-xs sm:text-sm text-neutral-800 font-medium leading-snug text-left">
-                  "{current.prompt}"
-                </p>
-                <a
-                  href="#contact"
-                  onClick={() => soundFx.playClick()}
-                  className="w-8 h-8 rounded-xl bg-purple-500 text-white flex items-center justify-center shrink-0 hover:bg-neutral-950 transition-colors shadow-xs"
-                  aria-label="Submit project request"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </a>
-              </div>
-
             </div>
 
           </div>

@@ -310,10 +310,6 @@ export default function ContactSection() {
           <div className="lg:col-span-5 text-left flex flex-col justify-between space-y-6 pt-1">
             
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ea580c]/10 border border-[#ea580c]/20 text-[#ea580c] font-mono text-[10px] font-bold uppercase tracking-wider mb-3">
-                <span>Start Your Next Digital Leap</span>
-              </div>
-
               <h2 className="font-display font-bold text-2xl sm:text-3xl text-neutral-950 tracking-tight leading-snug mb-3">
                 Let's engineer something extraordinary together.
               </h2>
