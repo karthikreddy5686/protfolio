@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ClientMarquee from './components/ClientMarquee'
+import AboutSection from './components/AboutSection'
 import AchievementsSection from './components/AchievementsSection'
 import ContactSection from './components/ContactSection'
 import ClientsSection from './components/ClientsSection'
@@ -22,13 +23,16 @@ export default function App() {
         {/* 2. Modern Technologies Stack Marquee */}
         <ClientMarquee />
 
-        {/* 3. Achievements, Awards & Client Reviews Section (Replaced About Section) */}
+        {/* 3. About reactj (Interactive Showcase) */}
+        <AboutSection />
+
+        {/* 4. Achievements & Industry Recognitions (Black Background) */}
         <AchievementsSection />
 
-        {/* 4. Client Intake Form (Matching & Syncing to Google Forms) */}
+        {/* 5. Client Intake Form (Matching & Syncing to Google Forms) */}
         <ContactSection />
 
-        {/* 5. Our Clients Continuous Scroller */}
+        {/* 6. Our Clients Grid (Continuous Scroller) */}
         <ClientsSection />
       </main>
 
