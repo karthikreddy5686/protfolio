@@ -1,27 +1,27 @@
 import React from 'react'
-import { Trophy, Star, Award, CheckCircle2, TrendingUp, ShieldCheck } from 'lucide-react'
+import { Trophy, Star, Award, TrendingUp, ShieldCheck, CheckCircle2 } from 'lucide-react'
 import { soundFx } from '../utils/audio'
 
 const achievements = [
   {
     number: '50+',
     label: 'Products Shipped',
-    desc: 'Scalable web and mobile applications delivered on time.',
+    desc: 'Scalable web and mobile apps engineered with modern tech stacks.',
   },
   {
     number: '< 1.2s',
     label: 'Core Web Vitals',
-    desc: 'Sub-second first contentful paint across client storefronts.',
+    desc: 'Sub-second first contentful paint across client web platforms.',
   },
   {
     number: '99.9%',
-    label: 'Production Uptime',
-    desc: 'Reliable cloud edge deployments on Vercel & AWS.',
+    label: 'Production SLA',
+    desc: 'High-availability cloud architecture on Vercel & AWS.',
   },
   {
     number: '100%',
-    label: 'Code & IP Ownership',
-    desc: 'Full repository transfer and post-launch documentation.',
+    label: 'IP Transfer',
+    desc: 'Full repository, code ownership, and documentation handed over.',
   },
 ]
 
@@ -66,7 +66,7 @@ const reviews = [
 
 export default function AchievementsSection() {
   return (
-    <section id="achievements" className="py-10 md:py-14 px-4 sm:px-6 md:px-12 bg-white relative border-b border-neutral-200/80">
+    <section id="about" className="py-12 md:py-16 px-4 sm:px-6 md:px-12 bg-white relative border-b border-neutral-200/80">
       <div className="max-w-6xl mx-auto text-left">
         
         {/* Simple Minimal Header */}
@@ -75,11 +75,11 @@ export default function AchievementsSection() {
             PROVEN TRACK RECORD
           </span>
           <h2 className="font-display font-bold text-xl sm:text-2xl text-neutral-950 tracking-tight">
-            Achievements, Awards & Client Notes
+            Achievements, Awards & Client Reviews
           </h2>
         </div>
 
-        {/* 1. Key Metrics / Achievements Row */}
+        {/* 1. Key Metrics / Achievements Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 mb-8">
           {achievements.map((item, idx) => (
             <div
@@ -100,10 +100,10 @@ export default function AchievementsSection() {
           ))}
         </div>
 
-        {/* 2. Awards & Recognitions (Simple List) */}
+        {/* 2. Awards & Recognitions */}
         <div className="mb-8">
           <h3 className="font-display font-bold text-sm text-neutral-900 mb-3 tracking-tight">
-            Recognitions & Honors
+            Industry Recognitions & Honors
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {awards.map((award, idx) => (
@@ -111,7 +111,7 @@ export default function AchievementsSection() {
                 key={idx}
                 className="p-3.5 rounded-xl bg-neutral-50/60 border border-neutral-200/80 flex items-start gap-3 text-left"
               >
-                <div className="w-7 h-7 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-lg bg-neutral-100 border border-neutral-200 flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
                   {award.icon}
                 </div>
                 <div>
@@ -132,10 +132,10 @@ export default function AchievementsSection() {
           </div>
         </div>
 
-        {/* 3. Client Notes & Reviews (Simple Quote Cards) */}
+        {/* 3. Client Reviews & Notes */}
         <div>
           <h3 className="font-display font-bold text-sm text-neutral-900 mb-3 tracking-tight">
-            Client Reviews & Notes
+            Client Reviews & Verified Feedback
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
             {reviews.map((rev, idx) => (
