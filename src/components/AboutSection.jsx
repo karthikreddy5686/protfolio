@@ -153,7 +153,7 @@ export default function AboutSection() {
                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
                   </div>
                   <span className="text-[11px] font-mono text-neutral-400 font-semibold tracking-wider">
-                    reactj • {current.category}
+                    {current.category}
                   </span>
                   
                   {/* Pause / Play Auto-cycle Toggle */}
