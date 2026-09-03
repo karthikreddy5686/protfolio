@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ClientMarquee from './components/ClientMarquee'
 import AboutSection from './components/AboutSection'
-import AchievementsSection from './components/AchievementsSection'
 import ContactSection from './components/ContactSection'
 import ClientsSection from './components/ClientsSection'
 import Footer from './components/Footer'
@@ -26,13 +25,10 @@ export default function App() {
         {/* 3. About reactj (Interactive Showcase) */}
         <AboutSection />
 
-        {/* 4. Achievements, Awards & Client Reviews Note */}
-        <AchievementsSection />
-
-        {/* 5. Client Intake Form (Matching & Syncing to Google Forms) */}
+        {/* 4. Client Intake Form (Matching & Syncing to Google Forms) */}
         <ContactSection />
 
-        {/* 6. Our Clients Grid (Continuous Scroller) */}
+        {/* 5. Our Clients Grid (Continuous Scroller) */}
         <ClientsSection />
       </main>
 
