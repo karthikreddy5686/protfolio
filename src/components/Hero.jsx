@@ -229,12 +229,12 @@ export default function Hero() {
             {/* Action Buttons (rounded-[4px]) */}
             <div className="flex items-center gap-3 mb-5 sm:mb-6">
               <a
-                href="#about"
+                href="#contact"
                 onClick={() => soundFx.playClick()}
                 onMouseEnter={() => soundFx.playHover()}
                 className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-xs hover:shadow-md flex items-center gap-1.5 interactive cursor-pointer"
               >
-                <span>Verify Our Work</span>
+                <span>Get Quote</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
