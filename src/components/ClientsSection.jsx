@@ -149,38 +149,29 @@ export default function ClientsSection() {
                 <span className="font-display font-bold text-xs tracking-wide text-neutral-200 group-hover:text-white transition-colors text-center leading-tight">
                   {client.name}
                 </span>
-
-                <span className="text-[8px] font-mono tracking-wider text-neutral-500 uppercase mt-0.5 text-center leading-tight">
-                  {client.sub}
-                </span>
               </div>
             ))}
           </div>
         </div>
 
         {/* 2. Mobile (Phone): Vertical Scroller showing exactly 4 items height (rounded-[4px]) */}
-        <div className="md:hidden relative w-full max-w-xs mx-auto h-[230px] overflow-hidden rounded-[4px] border border-white/5 bg-white/[0.01] p-2">
+        <div className="md:hidden relative w-full max-w-xs mx-auto h-[220px] overflow-hidden rounded-[4px] border border-white/5 bg-white/[0.01] p-2">
           {/* Gradient Masks for Smooth Vertical Fade */}
           <div className="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-neutral-950 to-transparent z-10 pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
 
           {/* Vertical Upward Scrolling Track */}
-          <div className="flex flex-col gap-2.5 animate-marquee-vertical">
+          <div className="flex flex-col gap-2 animate-marquee-vertical">
             {[...clientBrands, ...clientBrands].map((client, idx) => (
               <div
                 key={idx}
-                className="group flex items-center justify-between py-2 px-3.5 rounded-[4px] border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] transition-all cursor-default select-none shrink-0 h-[48px]"
+                className="group flex items-center justify-between py-2.5 px-3.5 rounded-[4px] border border-white/5 bg-white/[0.03] hover:bg-white/[0.08] transition-all cursor-default select-none shrink-0 h-[44px]"
               >
                 <div className="flex items-center gap-2.5">
                   <div className="shrink-0">{client.icon}</div>
-                  <div className="text-left">
-                    <span className="font-display font-bold text-[11px] tracking-wide text-neutral-200 block leading-tight">
-                      {client.name}
-                    </span>
-                    <span className="text-[7px] font-mono tracking-wider text-neutral-500 uppercase block leading-tight">
-                      {client.sub}
-                    </span>
-                  </div>
+                  <span className="font-display font-bold text-xs tracking-wide text-neutral-200 block leading-tight">
+                    {client.name}
+                  </span>
                 </div>
               </div>
             ))}

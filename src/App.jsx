@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ClientMarquee from './components/ClientMarquee'
 import AboutSection from './components/AboutSection'
+import ServicesSection from './components/ServicesSection'
 import AchievementsSection from './components/AchievementsSection'
 import ContactSection from './components/ContactSection'
 import ClientsSection from './components/ClientsSection'
@@ -23,10 +24,13 @@ export default function App() {
         {/* 2. Modern Technologies Stack Marquee */}
         <ClientMarquee />
 
-        {/* 3. About reactj (Interactive Showcase) */}
+        {/* 3. About Us & Strategic Pillars Section */}
         <AboutSection />
 
-        {/* 4. Achievements & Industry Recognitions (Black Background) */}
+        {/* 4. Core Capabilities & Services Section */}
+        <ServicesSection />
+
+        {/* 5. Achievements & Industry Recognitions (Black Background) */}
         <AchievementsSection />
 
         {/* 5. Client Intake Form (Matching & Syncing to Google Forms) */}

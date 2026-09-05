@@ -11,7 +11,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
 
-      const sections = ['home', 'about', 'contact']
+      const sections = ['home', 'about', 'services', 'contact', 'clients']
       const scrollPos = window.scrollY + 200
 
       for (const sectionId of sections) {
@@ -55,14 +55,14 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Center Navigation Links (Home, About Us, Contact) - rounded-[4px] */}
-          <nav className="hidden lg:flex items-center gap-1 bg-neutral-100/70 p-1.5 rounded-[4px] border border-neutral-200/60 relative">
+          {/* Center Navigation Links matching reference mockup: Home, About, Services, Works, Contact - rounded-[4px] */}
+          <nav className="hidden lg:flex items-center gap-1 bg-neutral-100/80 p-1.5 rounded-[4px] border border-neutral-200/80 relative">
             
             {/* 1. Home */}
             <a
               href="#home"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'home'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -71,24 +71,37 @@ export default function Navbar() {
               Home
             </a>
 
-            {/* 2. About Us */}
+            {/* 2. About */}
             <a
               href="#about"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'about'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
               }`}
             >
-              About Us
+              About
             </a>
 
-            {/* 3. Contact */}
+            {/* 3. Services */}
+            <a
+              href="#services"
+              onClick={() => soundFx.playClick()}
+              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+                activeSection === 'services'
+                  ? 'bg-white text-neutral-950 shadow-xs font-bold'
+                  : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
+              }`}
+            >
+              Services
+            </a>
+
+            {/* 4. Contact */}
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className={`px-5 py-2 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'contact'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -96,16 +109,29 @@ export default function Navbar() {
             >
               Contact
             </a>
+
+            {/* 5. Works (Last) */}
+            <a
+              href="#clients"
+              onClick={() => soundFx.playClick()}
+              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+                activeSection === 'clients'
+                  ? 'bg-white text-neutral-950 shadow-xs font-bold'
+                  : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
+              }`}
+            >
+              Works
+            </a>
           </nav>
 
-          {/* Right Action Button - Get Quote (rounded-[4px]) */}
+          {/* Right Action Button - Let's Talk -> (rounded-[4px]) */}
           <div className="flex items-center gap-3">
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className="px-6 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
+              className="px-5 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
             >
-              <span>Get Quote</span>
+              <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
 
@@ -144,7 +170,14 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="font-display text-2xl font-bold text-neutral-900 py-1"
             >
-              About Us
+              About
+            </a>
+            <a
+              href="#services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="font-display text-2xl font-bold text-neutral-900 py-1"
+            >
+              Services
             </a>
             <a
               href="#contact"
@@ -152,6 +185,13 @@ export default function Navbar() {
               className="font-display text-2xl font-bold text-neutral-900 py-1"
             >
               Contact
+            </a>
+            <a
+              href="#clients"
+              onClick={() => setMobileMenuOpen(false)}
+              className="font-display text-2xl font-bold text-neutral-900 py-1"
+            >
+              Works
             </a>
           </div>
 

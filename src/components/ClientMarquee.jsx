@@ -44,17 +44,11 @@ export default function ClientMarquee() {
             <div
               key={`r1-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
+              className="flex items-center gap-2 px-4 py-2 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
-              <span className="text-xs">{tech.icon}</span>
-              <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">
+              <span className="text-sm">{tech.icon}</span>
+              <span className="font-display font-bold text-xs tracking-tight text-neutral-900">
                 {tech.name}
-              </span>
-              <span className="text-[9px] text-neutral-400 font-mono">
-                •
-              </span>
-              <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">
-                {tech.category}
               </span>
             </div>
           ))}
@@ -68,17 +62,11 @@ export default function ClientMarquee() {
             <div
               key={`r2-${idx}`}
               onMouseEnter={() => soundFx.playHover()}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
+              className="flex items-center gap-2 px-4 py-2 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-neutral-800 hover:border-[#ea580c] hover:bg-white hover:shadow-xs transition-all duration-200 interactive cursor-default"
             >
-              <span className="text-xs">{tech.icon}</span>
-              <span className="font-display font-semibold text-xs tracking-tight text-neutral-900">
+              <span className="text-sm">{tech.icon}</span>
+              <span className="font-display font-bold text-xs tracking-tight text-neutral-900">
                 {tech.name}
-              </span>
-              <span className="text-[9px] text-neutral-400 font-mono">
-                •
-              </span>
-              <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider">
-                {tech.category}
               </span>
             </div>
           ))}
