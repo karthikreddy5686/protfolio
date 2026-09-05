@@ -56,13 +56,13 @@ export default function Navbar() {
           </a>
 
           {/* Center Navigation Links matching reference mockup: Home, About, Services, Works, Contact - rounded-[4px] */}
-          <nav className="hidden lg:flex items-center gap-1 bg-neutral-100/80 p-1.5 rounded-[4px] border border-neutral-200/80 relative">
+          <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-neutral-100/80 p-1 lg:p-1.5 rounded-[4px] border border-neutral-200/80 relative">
             
             {/* 1. Home */}
             <a
               href="#home"
               onClick={() => soundFx.playClick()}
-              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 lg:px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'home'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -75,7 +75,7 @@ export default function Navbar() {
             <a
               href="#about"
               onClick={() => soundFx.playClick()}
-              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 lg:px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'about'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -88,7 +88,7 @@ export default function Navbar() {
             <a
               href="#services"
               onClick={() => soundFx.playClick()}
-              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 lg:px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'services'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -101,7 +101,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 lg:px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'contact'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -114,7 +114,7 @@ export default function Navbar() {
             <a
               href="#clients"
               onClick={() => soundFx.playClick()}
-              className={`px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
+              className={`px-3 lg:px-4 py-1.5 rounded-[4px] text-xs font-semibold transition-all duration-200 ${
                 activeSection === 'clients'
                   ? 'bg-white text-neutral-950 shadow-xs font-bold'
                   : 'text-neutral-700 hover:text-neutral-950 hover:bg-white/60'
@@ -125,11 +125,11 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Button - Let's Talk -> (rounded-[4px]) */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="#contact"
               onClick={() => soundFx.playClick()}
-              className="px-5 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
+              className="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white font-bold text-xs tracking-wide shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-1.5 interactive"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -141,7 +141,7 @@ export default function Navbar() {
                 soundFx.playClick()
                 setMobileMenuOpen(!mobileMenuOpen)
               }}
-              className="lg:hidden w-9 h-9 rounded-[4px] bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800"
+              className="md:hidden w-8 sm:w-9 h-8 sm:h-9 rounded-[4px] bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-800"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -153,7 +153,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl flex flex-col justify-between p-8 pt-28 lg:hidden animate-fade-in text-left">
+        <div className="fixed inset-0 z-40 bg-white/98 backdrop-blur-2xl flex flex-col justify-between p-8 pt-28 md:hidden animate-fade-in text-left">
           <div className="flex flex-col gap-4">
             <span className="text-[11px] font-mono uppercase text-neutral-400 font-bold tracking-widest">
               Navigation

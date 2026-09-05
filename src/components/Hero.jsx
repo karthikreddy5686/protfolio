@@ -108,14 +108,16 @@ export default function Hero() {
     {
       id: 'dedication',
       isRocket: true,
-      icon: () => (
+      icon: (isActive) => (
         <div className="relative flex items-center justify-center">
           {/* Rocket Icon */}
           <svg
-            className={`w-3.5 h-3.5 transition-all ${
+            className={`w-3.5 h-3.5 transition-all duration-300 ${
               rocketBooming
                 ? 'text-[#ea580c] -translate-y-8 translate-x-8 scale-150 rotate-45 opacity-0 duration-700 ease-out'
-                : 'text-neutral-800 group-hover:text-[#ea580c] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300'
+                : isActive
+                ? 'text-[#ea580c] -translate-y-1 translate-x-1 rotate-12 scale-125'
+                : 'text-neutral-800 group-hover:text-[#ea580c] group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-12 group-hover:scale-125'
             }`}
             viewBox="0 0 24 24"
             fill="none"
@@ -127,6 +129,17 @@ export default function Hero() {
             <path d="M9 12H4s.55-3.03 2-4.5c1.62-1.63 5-2.5 5-2.5" />
             <path d="M12 15v5s3.03-.55 4.5-2c1.63-1.62 2.5-5 2.5-5" />
           </svg>
+
+          {/* Micro Exhaust Flame on Hover */}
+          <span
+            className={`absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 rounded-full bg-gradient-to-tr from-red-500 via-orange-500 to-yellow-400 transition-all duration-300 ${
+              rocketBooming
+                ? 'opacity-0'
+                : isActive
+                ? 'opacity-100 scale-125 animate-pulse'
+                : 'opacity-0 group-hover:opacity-100 group-hover:scale-110 animate-pulse'
+            }`}
+          />
 
           {/* Exhaust Flame when booming */}
           {rocketBooming && (
@@ -144,7 +157,7 @@ export default function Hero() {
     {
       id: 'web',
       icon: (
-        <svg className="w-4 h-4 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="16 18 22 12 16 6" />
           <polyline points="8 6 2 12 8 18" />
         </svg>
@@ -155,7 +168,7 @@ export default function Hero() {
     {
       id: 'app',
       icon: (
-        <svg className="w-4 h-4 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
           <line x1="12" y1="18" x2="12.01" y2="18" />
         </svg>
@@ -166,7 +179,7 @@ export default function Hero() {
     {
       id: 'uiux',
       icon: (
-        <svg className="w-4 h-4 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
         </svg>
       ),
@@ -176,7 +189,7 @@ export default function Hero() {
     {
       id: 'marketing',
       icon: (
-        <svg className="w-4 h-4 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m3 11 18-5v12L3 13v-2z" />
           <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
         </svg>
@@ -187,7 +200,7 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="relative w-full pt-20 sm:pt-22 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white text-neutral-900">
+    <section id="home" className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-14 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white text-neutral-900">
       
       {/* Subtle Ambient Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(249,87,33,0.02)_0%,_rgba(255,255,255,1)_70%)] pointer-events-none" />
@@ -196,52 +209,43 @@ export default function Hero() {
       <div className="max-w-[1420px] mx-auto relative z-10">
 
         {/* HERO MAIN GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 xl:gap-8 items-start">
           
           {/* ================= LEFT COLUMN: HERO HEADLINE, CTA & 4 STATS ================= */}
-          <div className="lg:col-span-4 xl:col-span-3.5 flex flex-col justify-center text-left pt-1">
+          <div className="md:col-span-5 lg:col-span-4 xl:col-span-3.5 flex flex-col justify-center text-left pt-1 md:pt-2 lg:pt-4">
             
             {/* Big Bold Headline: We Design. We Develop. We Grow. */}
-            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-[52px] text-neutral-950 tracking-tight leading-[1.05] mb-3.5">
+            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] text-neutral-950 tracking-tight leading-[1.06] mb-3">
               We Design.<br />
               We Develop.<br />
               We Grow.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-5 font-sans max-w-sm">
+            <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4 sm:mb-5 font-sans max-w-sm">
               We build digital experiences that are beautiful, functional, and impactful from idea to growth.
             </p>
 
             {/* Action Buttons (rounded-[4px]) */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
               <a
                 href="#about"
                 onClick={() => soundFx.playClick()}
                 onMouseEnter={() => soundFx.playHover()}
-                className="px-5 py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-xs hover:shadow-md flex items-center gap-1.5 interactive cursor-pointer"
+                className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-[4px] bg-neutral-950 hover:bg-[#ea580c] text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-xs hover:shadow-md flex items-center gap-1.5 interactive cursor-pointer"
               >
-                <span>View My Work</span>
+                <span>Verify Our Work</span>
                 <ArrowUpRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="#contact"
-                onClick={() => soundFx.playClick()}
-                onMouseEnter={() => soundFx.playHover()}
-                className="px-5 py-2.5 rounded-[4px] bg-white hover:bg-neutral-100 text-neutral-950 border border-neutral-300 hover:border-neutral-950 text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 shadow-2xs interactive cursor-pointer"
-              >
-                <span>Hire Me</span>
               </a>
             </div>
 
             {/* Trust Subtext */}
-            <p className="text-[11px] text-neutral-500 font-medium mb-2.5 tracking-wide">
+            <p className="text-[10px] sm:text-[11px] text-neutral-500 font-medium mb-2 tracking-wide">
               Trusted by ideas. Driven by results.
             </p>
 
-            {/* 4 Interactive Stat Badges (In 1 neat row of 4 columns matching Image 2, rounded-[4px]) */}
-            <div className="grid grid-cols-4 gap-1.5 sm:gap-2 pt-0.5 relative">
+            {/* 4 Interactive Stat Badges (In 1 neat row of 4 columns, rounded-[4px]) */}
+            <div className="grid grid-cols-4 gap-1 sm:gap-2 pt-0.5 relative">
               {stats.map((stat, i) => {
                 const isActive = activeBadge === stat.id
                 return (
@@ -251,29 +255,29 @@ export default function Hero() {
                     onClick={stat.onClick}
                     onMouseEnter={() => {
                       soundFx.playHover()
-                      if (!stat.isRocket) setActiveBadge(stat.id)
+                      setActiveBadge(stat.id)
                     }}
                     onMouseLeave={() => {
-                      if (!stat.isRocket) setActiveBadge(null)
+                      setActiveBadge(null)
                     }}
-                    className={`relative flex flex-col items-center justify-center p-2 rounded-[4px] transition-all duration-300 group select-none text-center cursor-pointer border ${
+                    className={`relative flex flex-col items-center justify-center p-1.5 sm:p-2 rounded-[4px] transition-all duration-300 group select-none text-center cursor-pointer border ${
                       isActive || (stat.isRocket && rocketBooming)
                         ? 'bg-orange-50/80 border-[#ea580c] shadow-sm scale-105'
-                        : 'bg-neutral-50/90 border-neutral-200/90 hover:border-neutral-950/50 hover:bg-white hover:scale-102'
+                        : 'bg-neutral-50/90 border-neutral-200/90 hover:border-[#ea580c] hover:bg-orange-50/80 hover:scale-105'
                     }`}
                   >
                     {/* Laurel / Bracket Brackets & Interactive Icon */}
                     <div className="flex items-center gap-0.5 mb-0.5 text-neutral-800 transition-transform duration-200">
-                      <span className="text-neutral-400 font-serif text-xs select-none">‹</span>
+                      <span className="text-neutral-400 font-serif text-[10px] sm:text-xs select-none">‹</span>
                       {stat.icon(isActive)}
-                      <span className="text-neutral-400 font-serif text-xs select-none">›</span>
+                      <span className="text-neutral-400 font-serif text-[10px] sm:text-xs select-none">›</span>
                     </div>
 
-                    <span className="font-display font-black text-xs sm:text-sm text-neutral-950 leading-tight">
+                    <span className="font-display font-black text-[11px] sm:text-xs md:text-sm text-neutral-950 leading-tight">
                       {stat.value}
                     </span>
 
-                    <span className="text-[8.5px] text-neutral-500 font-medium leading-tight truncate w-full text-center group-hover:text-neutral-900 transition-colors">
+                    <span className="text-[7.5px] sm:text-[8.5px] text-neutral-500 font-medium leading-tight truncate w-full text-center group-hover:text-neutral-900 transition-colors">
                       {stat.label}
                     </span>
 
@@ -310,7 +314,7 @@ export default function Hero() {
           </div>
 
           {/* ================= RIGHT COLUMN: HD CHARACTER BANNER + 4 SERVICE CARDS ================= */}
-          <div className="lg:col-span-8 xl:col-span-8.5 w-full flex flex-col gap-3">
+          <div className="md:col-span-7 lg:col-span-8 xl:col-span-8.5 w-full flex flex-col gap-2.5 sm:gap-3">
             
             {/* 1. Crystal-Clear HD Character Illustration Banner with Ultra-Bright Orange Ground Base */}
             <div className="relative w-full flex items-center justify-center overflow-hidden pb-1 rounded-[4px]">
@@ -320,30 +324,30 @@ export default function Hero() {
               <img
                 src="/images/hero-characters-hd.png"
                 alt="Web Development, App Development, UI/UX Design, Digital Marketing"
-                className="relative z-10 w-full h-auto max-h-[320px] sm:max-h-[350px] md:max-h-[380px] object-contain select-none mix-blend-multiply"
+                className="relative z-10 w-full h-auto max-h-[260px] sm:max-h-[320px] md:max-h-[350px] lg:max-h-[380px] object-contain select-none mix-blend-multiply"
                 style={{ imageRendering: '-webkit-optimize-contrast' }}
               />
             </div>
 
-            {/* 2. 4 Service Cards Directly Below the Illustration in 1 Row of 4 Columns (rounded-[4px]) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+            {/* 2. 4 Service Cards Directly Below the Illustration: Side by side (2 cols on mobile, 4 on desktop/laptop) */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
               {services.map((item) => (
                 <a
                   key={item.id}
                   href="#services"
                   onClick={() => soundFx.playClick()}
                   onMouseEnter={() => soundFx.playHover()}
-                  className="flex flex-col p-3 sm:p-3.5 rounded-[4px] bg-white border border-neutral-200/90 hover:border-neutral-950 hover:shadow-md transition-all duration-300 group text-left relative"
+                  className="flex flex-col p-2.5 sm:p-3 sm:p-3.5 rounded-[4px] bg-white border border-neutral-200/90 hover:border-[#ea580c] hover:bg-orange-50/40 hover:shadow-md hover:shadow-orange-500/10 hover:-translate-y-0.5 transition-all duration-300 group text-left relative cursor-pointer"
                 >
-                  <div className="flex items-center gap-2 mb-1.5 text-neutral-900 group-hover:text-[#ea580c] transition-colors duration-200">
-                    <span className="p-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200 group-hover:border-orange-200 group-hover:bg-orange-50 transition-colors">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-1.5 text-neutral-900 group-hover:text-[#ea580c] transition-colors duration-200">
+                    <span className="p-1 sm:p-1.5 rounded-[4px] bg-neutral-50 border border-neutral-200 text-neutral-800 group-hover:border-orange-300 group-hover:bg-[#ea580c] group-hover:text-white transition-all duration-300 shadow-2xs shrink-0">
                       {item.icon}
                     </span>
-                    <h3 className="font-display font-bold text-xs sm:text-[13px] text-neutral-950 tracking-tight leading-snug">
+                    <h3 className="font-display font-bold text-[11px] sm:text-xs md:text-[13px] text-neutral-950 group-hover:text-[#ea580c] tracking-tight leading-snug transition-colors duration-200 line-clamp-1">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-[11px] text-neutral-600 leading-relaxed font-sans">
+                  <p className="text-[10px] sm:text-[11px] text-neutral-600 group-hover:text-neutral-700 leading-relaxed font-sans transition-colors line-clamp-2 sm:line-clamp-none">
                     {item.desc}
                   </p>
                 </a>

@@ -72,10 +72,10 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto">
         
         {/* Split 2-Column Layout: Form on Left, Content on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Compact Client Intake Form (rounded-[4px]) */}
-          <div className="lg:col-span-7">
+          <div className="md:col-span-7">
             <div className="p-6 sm:p-7 rounded-[4px] bg-white border border-neutral-200 shadow-sm text-left">
               
               <div className="mb-5">
@@ -280,8 +280,8 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column: High-Impact Agency Details & Value Proposition (lg:col-span-5) */}
-          <div className="lg:col-span-5 text-left flex flex-col justify-between space-y-6 pt-1">
+          {/* Right Column: High-Impact Agency Details & Value Proposition (md:col-span-5) */}
+          <div className="md:col-span-5 text-left flex flex-col justify-between space-y-6 pt-1">
             
             <div>
               <h2 className="font-display font-bold text-2xl sm:text-3xl text-neutral-950 tracking-tight leading-snug mb-3">

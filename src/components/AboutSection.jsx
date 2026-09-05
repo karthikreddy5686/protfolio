@@ -31,10 +31,10 @@ export default function AboutSection() {
     <section id="about" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white relative border-b border-neutral-200/80 overflow-hidden text-neutral-900">
       <div className="max-w-7xl mx-auto">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
           
-          {/* Left Column: Concise Narrative, Highlights & Key Stats (lg:col-span-7) */}
-          <div className="lg:col-span-7 text-left flex flex-col justify-between space-y-6">
+          {/* Left Column: Concise Narrative, Highlights & Key Stats (md:col-span-7) */}
+          <div className="md:col-span-7 text-left flex flex-col justify-between space-y-6">
             
             {/* Top Category Kicker */}
             <div>
@@ -78,10 +78,10 @@ export default function AboutSection() {
               <div className="flex items-center gap-6 sm:gap-8">
                 {stats.map((s, i) => (
                   <div key={i} className="flex flex-col">
-                    <span className="font-display font-black text-xl sm:text-2xl text-neutral-950 leading-none mb-0.5">
+                    <span className="font-display font-black text-xl sm:text-2xl text-neutral-950 leading-tight mb-0.5">
                       {s.value}
                     </span>
-                    <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-tight">
+                    <span className="text-[10px] font-mono text-neutral-500 font-bold uppercase tracking-wider">
                       {s.label}
                     </span>
                   </div>
@@ -91,17 +91,17 @@ export default function AboutSection() {
               <a
                 href="#contact"
                 onClick={() => soundFx.playClick()}
-                className="px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 flex items-center gap-1.5 shadow-xs interactive"
+                className="px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 shadow-xs flex items-center gap-1.5 interactive"
               >
-                <span>Work With Us</span>
+                <span>Partner With Us</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
           </div>
 
-          {/* Right Column: High-Def Team Collaboration Line-Art with Electric Orange Base (lg:col-span-5) */}
-          <div className="lg:col-span-5 relative flex items-center justify-center py-4 select-none">
+          {/* Right Column: High-Def Team Collaboration Line-Art with Electric Orange Base (md:col-span-5) */}
+          <div className="md:col-span-5 relative flex items-center justify-center py-4 select-none">
             
             <div className="relative w-full max-w-lg flex flex-col items-center justify-center">
               
