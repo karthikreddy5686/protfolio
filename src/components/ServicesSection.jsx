@@ -86,8 +86,8 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Dynamic Expanding Service Cards: Side-by-Side on Mobile, MacBook & Desktop */}
-        <div className="flex flex-row gap-2 sm:gap-3.5 h-[440px] sm:h-[430px] md:h-[420px] w-full select-none overflow-x-auto md:overflow-visible pb-2 md:pb-0 scrollbar-none">
+        {/* Responsive Service Cards: Vertical downwards on Mobile, Horizontal Expanding on MacBook/Desktop */}
+        <div className="flex flex-col md:flex-row gap-3 sm:gap-3.5 md:h-[420px] w-full select-none">
           {services.map((service, idx) => {
             const isExpanded = activeCard === idx
 
@@ -102,61 +102,72 @@ export default function ServicesSection() {
                   soundFx.playClick()
                   setActiveCard(idx)
                 }}
-                className={`relative rounded-[4px] overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border bg-white shrink-0 md:shrink ${
+                className={`relative rounded-[4px] overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border bg-white ${
                   isExpanded
-                    ? 'w-[280px] sm:w-[380px] md:w-auto md:flex-[3] lg:flex-[3.5] shadow-lg border-[#ff5500] ring-1 ring-[#ff5500]/20'
-                    : 'w-[70px] sm:w-[84px] md:w-auto md:flex-1 opacity-90 hover:opacity-100 border-neutral-200/90 hover:border-neutral-950/40 hover:shadow-xs'
+                    ? 'md:flex-[3] lg:flex-[3.5] shadow-lg border-[#ff5500] ring-1 ring-[#ff5500]/20'
+                    : 'md:flex-1 opacity-90 hover:opacity-100 border-neutral-200/90 hover:border-neutral-950/40 hover:shadow-xs'
                 }`}
               >
-                {/* Expanded Card Layout: Split Left Content + Right Line-Art Illustration */}
-                {isExpanded ? (
-                  <div className="absolute inset-0 p-4 sm:p-6 z-10 grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center animate-fade-in bg-white overflow-y-auto md:overflow-hidden">
-                    {/* Left: Text, Bullets, and CTA */}
-                    <div className="md:col-span-7 flex flex-col justify-between h-full text-left z-10 py-1">
-                      <div>
-                        {/* Title */}
-                        <h3 className="font-display font-black text-xl sm:text-2xl md:text-3xl text-neutral-950 tracking-tight leading-tight mb-2">
-                          {service.title}
-                        </h3>
+                {/* 1. Desktop & Laptop Layout (md: and above) */}
+                <div className="hidden md:block absolute inset-0">
+                  {isExpanded ? (
+                    <div className="h-full p-6 grid grid-cols-12 gap-4 items-center animate-fade-in bg-white">
+                      {/* Left: Text, Bullets, and CTA */}
+                      <div className="col-span-7 flex flex-col justify-between h-full text-left z-10 py-1">
+                        <div>
+                          <h3 className="font-display font-black text-2xl lg:text-3xl text-neutral-950 tracking-tight leading-tight mb-2">
+                            {service.title}
+                          </h3>
+                          <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed font-sans mb-4 max-w-md">
+                            {service.description}
+                          </p>
+                          <div className="flex flex-wrap gap-1.5 mb-5">
+                            {service.deliverables.map((item, dIdx) => (
+                              <span
+                                key={dIdx}
+                                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-[10.5px] text-neutral-800 font-medium"
+                              >
+                                <CheckCircle2 className="w-3 h-3 text-[#ff5500] shrink-0" />
+                                <span>{item}</span>
+                              </span>
+                            ))}
+                          </div>
+                        </div>
 
-                        {/* Description */}
-                        <p className="text-[11px] sm:text-xs md:text-sm text-neutral-600 leading-relaxed font-sans mb-3 sm:mb-4 max-w-md">
-                          {service.description}
-                        </p>
-
-                        {/* Deliverables Badges */}
-                        <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-5">
-                          {service.deliverables.map((item, dIdx) => (
-                            <span
-                              key={dIdx}
-                              className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-[10px] sm:text-[10.5px] text-neutral-800 font-medium"
-                            >
-                              <CheckCircle2 className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-[#ff5500] shrink-0" />
-                              <span>{item}</span>
-                            </span>
-                          ))}
+                        <div>
+                          <a
+                            href="#contact"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              soundFx.playClick()
+                            }}
+                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 shadow-xs interactive"
+                          >
+                            <span>Get Started</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
                         </div>
                       </div>
 
-                      {/* Action CTA */}
-                      <div className="pt-1">
-                        <a
-                          href="#contact"
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            soundFx.playClick()
-                          }}
-                          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-[11px] sm:text-xs font-bold transition-all duration-300 shadow-xs interactive"
-                        >
-                          <span>Get Started</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </a>
+                      {/* Right: Crisp Line-Art Illustration */}
+                      <div className="col-span-5 h-full flex items-center justify-center p-2 relative">
+                        <div className="w-full h-full max-h-[340px] flex items-center justify-center overflow-hidden">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-full object-contain select-none mix-blend-multiply"
+                            style={{ imageRendering: '-webkit-optimize-contrast' }}
+                          />
+                        </div>
                       </div>
                     </div>
-
-                    {/* Right: Crisp Line-Art Illustration with mix-blend-multiply */}
-                    <div className="hidden sm:flex md:col-span-5 h-full items-center justify-center p-2 relative">
-                      <div className="w-full h-full max-h-[220px] md:max-h-[340px] flex items-center justify-center overflow-hidden">
+                  ) : (
+                    /* Collapsed Desktop View */
+                    <div className="h-full p-4 flex flex-col justify-between items-center text-center bg-white">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-neutral-100 text-neutral-700">
+                        {service.number}
+                      </span>
+                      <div className="w-full h-36 flex items-center justify-center overflow-hidden my-auto opacity-75">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -164,34 +175,94 @@ export default function ServicesSection() {
                           style={{ imageRendering: '-webkit-optimize-contrast' }}
                         />
                       </div>
+                      <div className="pt-2 border-t border-neutral-100 w-full overflow-hidden">
+                        <h3 className="font-display font-bold text-xs lg:text-sm text-neutral-950 leading-tight truncate">
+                          {service.title}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  /* Collapsed Card View */
-                  <div className="absolute inset-0 p-2 sm:p-4 flex flex-col justify-between items-center text-center z-10 bg-white">
-                    {/* Top Number */}
-                    <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded-[4px] bg-neutral-100 text-neutral-700">
-                      {service.number}
-                    </span>
+                  )}
+                </div>
 
-                    {/* Middle Illustration Preview */}
-                    <div className="w-full h-28 sm:h-36 flex items-center justify-center overflow-hidden my-auto opacity-75">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-contain select-none mix-blend-multiply"
-                        style={{ imageRendering: '-webkit-optimize-contrast' }}
-                      />
-                    </div>
+                {/* 2. Mobile Layout (Downwards appearance) */}
+                <div className="md:hidden">
+                  {isExpanded ? (
+                    <div className="p-4 sm:p-5 flex flex-col gap-3.5 text-left bg-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-orange-100 text-[#ff5500]">
+                            {service.number}
+                          </span>
+                          <span className="text-[11px] font-mono text-neutral-500 font-medium">
+                            {service.category}
+                          </span>
+                        </div>
+                        <span className="w-2 h-2 rounded-full bg-[#ff5500]" />
+                      </div>
 
-                    {/* Bottom Title */}
-                    <div className="pt-1.5 sm:pt-2 border-t border-neutral-100 w-full overflow-hidden">
-                      <h3 className="font-display font-bold text-[10px] sm:text-xs md:text-sm text-neutral-950 leading-tight truncate">
-                        {service.title}
-                      </h3>
+                      <div>
+                        <h3 className="font-display font-bold text-xl text-neutral-950 tracking-tight mb-1.5">
+                          {service.title}
+                        </h3>
+                        <p className="text-xs text-neutral-600 leading-relaxed font-sans mb-3">
+                          {service.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5 mb-3.5">
+                          {service.deliverables.map((item, dIdx) => (
+                            <span
+                              key={dIdx}
+                              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-neutral-50 border border-neutral-200/90 text-[10.5px] text-neutral-800 font-medium"
+                            >
+                              <CheckCircle2 className="w-3 h-3 text-[#ff5500] shrink-0" />
+                              <span>{item}</span>
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Mobile illustration */}
+                        <div className="w-full max-h-[170px] flex items-center justify-center my-2 overflow-hidden">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-auto max-h-[160px] object-contain mix-blend-multiply select-none"
+                          />
+                        </div>
+
+                        <a
+                          href="#contact"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            soundFx.playClick()
+                          }}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 shadow-xs interactive w-full justify-center"
+                        >
+                          <span>Get Started</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    /* Mobile Collapsed Row */
+                    <div className="p-3.5 flex items-center justify-between text-left bg-neutral-50/70 hover:bg-neutral-100/80 transition-colors">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-white border border-neutral-200 text-neutral-700">
+                          {service.number}
+                        </span>
+                        <div>
+                          <h3 className="font-display font-bold text-sm text-neutral-950">
+                            {service.title}
+                          </h3>
+                          <span className="text-[10.5px] text-neutral-500 font-sans block">
+                            {service.category}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-neutral-400 font-mono text-sm">↓</span>
+                    </div>
+                  )}
+                </div>
+
               </div>
             )
           })}
