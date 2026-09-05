@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import React, { useState } from 'react'
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import { soundFx } from '../utils/audio'
 
@@ -9,7 +9,7 @@ export const services = [
     title: 'Web Development',
     category: 'Engineering & Scalability',
     tagline: 'Next.js 15 • React • Scalable APIs',
-    description: 'We construct bulletproof web applications, SaaS platforms, and fast eCommerce architectures with sub-second load times and zero technical debt.',
+    description: 'We construct high-speed web apps, SaaS platforms, and eCommerce systems with zero tech debt.',
     deliverables: [
       'Next.js 15 & React SPAs',
       'Modular Micro-Services',
@@ -23,7 +23,7 @@ export const services = [
     title: 'App Development',
     category: 'iOS & Android Native Grade',
     tagline: 'React Native • Cloud Sync • High Speed',
-    description: 'We build fluid, reliable cross-platform mobile applications with real-time push telemetry, offline data caching, and native hardware performance.',
+    description: 'Fluid cross-platform mobile apps with real-time sync, offline caching, and native performance.',
     deliverables: [
       'Cross-Platform iOS & Android',
       'Real-Time WebSocket Sync',
@@ -37,7 +37,7 @@ export const services = [
     title: 'UI/UX Design',
     category: 'Design Systems & UX Psychology',
     tagline: 'Figma • Wireframes • Design Tokens',
-    description: 'Every interface is engineered around human psychology, ensuring intuitive customer journeys, seamless conversion funnels, and scalable design tokens.',
+    description: 'Human-centric interfaces, conversion-focused user journeys, and scalable design systems.',
     deliverables: [
       'Interactive Prototypes',
       'Design Token Systems',
@@ -51,7 +51,7 @@ export const services = [
     title: 'Digital Marketing',
     category: 'Growth & Inbound Performance',
     tagline: 'Technical SEO • Ads • High ROI',
-    description: 'We embed programmatic SEO, high-ROI Google Ads campaigns, and user telemetry directly into your funnels to generate qualified leads from day one.',
+    description: 'Programmatic SEO, high-ROI Google Ads campaigns, and data-driven user conversion funnels.',
     deliverables: [
       'Technical SEO Foundation',
       'Conversion Event Tracking',
@@ -86,8 +86,8 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Responsive Service Cards: Vertical downwards on Mobile, Horizontal Expanding on MacBook/Desktop */}
-        <div className="flex flex-col md:flex-row gap-3 sm:gap-3.5 md:h-[420px] w-full select-none">
+        {/* Responsive Service Cards */}
+        <div className="flex flex-col md:flex-row gap-3 sm:gap-3.5 md:h-[440px] w-full select-none">
           {services.map((service, idx) => {
             const isExpanded = activeCard === idx
 
@@ -104,24 +104,35 @@ export default function ServicesSection() {
                 }}
                 className={`relative rounded-[4px] overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] border bg-white ${
                   isExpanded
-                    ? 'md:flex-[3] lg:flex-[3.5] shadow-lg border-[#ff5500] ring-1 ring-[#ff5500]/20'
+                    ? 'md:flex-[3.8] lg:flex-[4.2] shadow-lg border-[#ff5500] ring-1 ring-[#ff5500]/20'
                     : 'md:flex-1 opacity-90 hover:opacity-100 border-neutral-200/90 hover:border-neutral-950/40 hover:shadow-xs'
                 }`}
               >
-                {/* 1. Desktop & Laptop Layout (md: and above) */}
+                {/* 1. Desktop & Laptop Layout */}
                 <div className="hidden md:block absolute inset-0">
                   {isExpanded ? (
-                    <div className="h-full p-6 grid grid-cols-12 gap-4 items-center animate-fade-in bg-white">
-                      {/* Left: Text, Bullets, and CTA */}
-                      <div className="col-span-7 flex flex-col justify-between h-full text-left z-10 py-1">
+                    <div className="h-full p-6 lg:p-8 grid grid-cols-12 gap-3 lg:gap-6 items-center animate-fade-in bg-white">
+                      {/* Left: Concise Content & Action */}
+                      <div className="col-span-5 flex flex-col justify-between h-full text-left z-10 py-1">
                         <div>
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-orange-100 text-[#ff5500]">
+                              {service.number}
+                            </span>
+                            <span className="text-[11px] font-mono text-neutral-500 font-medium truncate">
+                              {service.category}
+                            </span>
+                          </div>
+
                           <h3 className="font-display font-black text-2xl lg:text-3xl text-neutral-950 tracking-tight leading-tight mb-2">
                             {service.title}
                           </h3>
-                          <p className="text-xs lg:text-sm text-neutral-600 leading-relaxed font-sans mb-4 max-w-md">
+
+                          <p className="text-xs text-neutral-600 leading-relaxed font-sans mb-3.5">
                             {service.description}
                           </p>
-                          <div className="flex flex-wrap gap-1.5 mb-5">
+
+                          <div className="flex flex-wrap gap-1.5 mb-4">
                             {service.deliverables.map((item, dIdx) => (
                               <span
                                 key={dIdx}
@@ -149,13 +160,13 @@ export default function ServicesSection() {
                         </div>
                       </div>
 
-                      {/* Right: Crisp Line-Art Illustration */}
-                      <div className="col-span-5 h-full flex items-center justify-center p-2 relative">
-                        <div className="w-full h-full max-h-[340px] flex items-center justify-center overflow-hidden">
+                      {/* Right: Enlarged Hero Illustration */}
+                      <div className="col-span-7 h-full flex items-center justify-center p-1 lg:p-2 relative">
+                        <div className="w-full h-full max-h-[380px] lg:max-h-[400px] flex items-center justify-center overflow-hidden">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-full object-contain select-none mix-blend-multiply"
+                            className="w-full h-full object-contain select-none mix-blend-multiply transition-transform duration-300 hover:scale-105"
                             style={{ imageRendering: '-webkit-optimize-contrast' }}
                           />
                         </div>
@@ -167,7 +178,7 @@ export default function ServicesSection() {
                       <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-neutral-100 text-neutral-700">
                         {service.number}
                       </span>
-                      <div className="w-full h-36 flex items-center justify-center overflow-hidden my-auto opacity-75">
+                      <div className="w-full h-40 flex items-center justify-center overflow-hidden my-auto opacity-75">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -184,10 +195,10 @@ export default function ServicesSection() {
                   )}
                 </div>
 
-                {/* 2. Mobile Layout (Downwards appearance) */}
+                {/* 2. Mobile Layout */}
                 <div className="md:hidden">
                   {isExpanded ? (
-                    <div className="p-4 sm:p-5 flex flex-col gap-3.5 text-left bg-white">
+                    <div className="p-4 sm:p-5 flex flex-col gap-3 text-left bg-white">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-[4px] bg-orange-100 text-[#ff5500]">
@@ -201,14 +212,14 @@ export default function ServicesSection() {
                       </div>
 
                       <div>
-                        <h3 className="font-display font-bold text-xl text-neutral-950 tracking-tight mb-1.5">
+                        <h3 className="font-display font-bold text-xl text-neutral-950 tracking-tight mb-1">
                           {service.title}
                         </h3>
-                        <p className="text-xs text-neutral-600 leading-relaxed font-sans mb-3">
+                        <p className="text-xs text-neutral-600 leading-relaxed font-sans mb-2.5">
                           {service.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-1.5 mb-3.5">
+                        <div className="flex flex-wrap gap-1.5 mb-3">
                           {service.deliverables.map((item, dIdx) => (
                             <span
                               key={dIdx}
@@ -220,12 +231,12 @@ export default function ServicesSection() {
                           ))}
                         </div>
 
-                        {/* Mobile illustration */}
-                        <div className="w-full max-h-[170px] flex items-center justify-center my-2 overflow-hidden">
+                        {/* Enlarged Mobile Illustration */}
+                        <div className="w-full max-h-[220px] flex items-center justify-center my-2 overflow-hidden">
                           <img
                             src={service.image}
                             alt={service.title}
-                            className="w-full h-auto max-h-[160px] object-contain mix-blend-multiply select-none"
+                            className="w-full h-auto max-h-[210px] object-contain mix-blend-multiply select-none"
                           />
                         </div>
 
@@ -235,7 +246,7 @@ export default function ServicesSection() {
                             e.stopPropagation()
                             soundFx.playClick()
                           }}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 shadow-xs interactive w-full justify-center"
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-neutral-950 text-white hover:bg-[#ff5500] text-xs font-bold transition-all duration-300 shadow-xs interactive w-full justify-center mt-1"
                         >
                           <span>Get Started</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -258,7 +269,7 @@ export default function ServicesSection() {
                           </span>
                         </div>
                       </div>
-                      <span className="text-neutral-400 font-mono text-sm">↓</span>
+                      <span className="text-neutral-400 font-mono text-sm">+</span>
                     </div>
                   )}
                 </div>
