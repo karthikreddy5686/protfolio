@@ -200,22 +200,22 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-14 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white text-neutral-900">
+    <section id="home" className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-14 px-4 sm:px-6 md:px-12 overflow-hidden bg-white text-neutral-900">
       
       {/* Subtle Ambient Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(249,87,33,0.02)_0%,_rgba(255,255,255,1)_70%)] pointer-events-none" />
 
-      {/* Main Container matching exact layout in Reference Image 2 */}
-      <div className="max-w-[1420px] mx-auto relative z-10">
+      {/* Main Container aligned to Navbar */}
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* HERO MAIN GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 xl:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-start">
           
           {/* ================= LEFT COLUMN: HERO HEADLINE, CTA & 4 STATS ================= */}
-          <div className="md:col-span-5 lg:col-span-4 xl:col-span-3.5 flex flex-col justify-center text-left pt-1 md:pt-2 lg:pt-4">
+          <div className="md:col-span-5 lg:col-span-4 flex flex-col justify-center text-left pt-1 md:pt-2 lg:pt-3">
             
             {/* Big Bold Headline: We Design. We Develop. We Grow. */}
-            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] text-neutral-950 tracking-tight leading-[1.06] mb-3">
+            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-[42px] lg:text-[48px] text-neutral-950 tracking-tight leading-[1.06] mb-3">
               We Design.<br />
               We Develop.<br />
               We Grow.
@@ -314,7 +314,7 @@ export default function Hero() {
           </div>
 
           {/* ================= RIGHT COLUMN: HD CHARACTER BANNER + 4 SERVICE CARDS ================= */}
-          <div className="md:col-span-7 lg:col-span-8 xl:col-span-8.5 w-full flex flex-col gap-2.5 sm:gap-3">
+          <div className="md:col-span-7 lg:col-span-8 w-full flex flex-col gap-2.5 sm:gap-3">
             
             {/* 1. Crystal-Clear HD Character Illustration Banner with Ultra-Bright Orange Ground Base */}
             <div className="relative w-full flex items-center justify-center overflow-hidden pb-1 rounded-[4px]">

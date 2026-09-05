@@ -49,7 +49,7 @@ const awards = [
 export default function AchievementsSection() {
   return (
     <section id="achievements" className="py-10 md:py-14 px-4 sm:px-6 md:px-12 bg-neutral-950 text-white relative border-b border-neutral-800">
-      <div className="max-w-6xl mx-auto text-left">
+      <div className="max-w-7xl mx-auto text-left">
         
         {/* Simple Minimal Header */}
         <div className="mb-6">

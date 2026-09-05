@@ -65,7 +65,7 @@ export default function ServicesSection() {
   const [activeCard, setActiveCard] = useState(0)
 
   return (
-    <section id="services" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white relative border-b border-neutral-200/80 overflow-hidden text-neutral-900">
+    <section id="services" className="py-14 sm:py-20 px-4 sm:px-6 md:px-12 bg-white relative border-b border-neutral-200/80 overflow-hidden text-neutral-900">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
